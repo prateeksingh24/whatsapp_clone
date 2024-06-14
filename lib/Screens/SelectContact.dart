@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/CustomUi/ButtonCard.dart';
 import 'package:whatsapp_clone/CustomUi/ContactCard.dart';
+import 'package:whatsapp_clone/Model/ChatModel.dart';
+import 'package:whatsapp_clone/Screens/CreateGroup.dart';
 
 class SelectContact extends StatefulWidget {
   const SelectContact({super.key});
@@ -11,6 +14,81 @@ class SelectContact extends StatefulWidget {
 class _SelectContactState extends State<SelectContact> {
   @override
   Widget build(BuildContext context) {
+    List<ChatModel> contacts = [
+      ChatModel(
+          name: "Prateek Singh",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "A Full stack Flutter devloper"),
+      ChatModel(
+          name: "Abhishek",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "CTO Of Wipeduck"),
+      ChatModel(
+          name: "Shobit",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "Flutter devloper"),
+      ChatModel(
+          name: "Prateek Singh",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "A Full stack Flutter devloper"),
+      ChatModel(
+          name: "Abhishek",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "CTO Of Wipeduck"),
+      ChatModel(
+          name: "Shobit",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "Flutter devloper"),
+      ChatModel(
+          name: "Prateek Singh",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "A Full stack Flutter devloper"),
+      ChatModel(
+          name: "Abhishek",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "CTO Of Wipeduck"),
+      ChatModel(
+          name: "Shobit",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "Flutter devloper"),
+      ChatModel(
+          name: "Prateek Singh",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "A Full stack Flutter devloper"),
+      ChatModel(
+          name: "Abhishek",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "CTO Of Wipeduck"),
+      ChatModel(
+          name: "Shobit",
+          icon: "",
+          currentMessage: "",
+          time: "",
+          status: "Flutter devloper"),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -58,10 +136,30 @@ class _SelectContactState extends State<SelectContact> {
           })
         ],
       ),
-      body: ListView(
-        children: [
-          ContactCard(),
-        ],
+      body: ListView.builder(
+        itemCount: contacts.length + 2,
+        itemBuilder: (context, index) {
+          if (index == 0) {
+            return InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) => CreateGroup()));
+              },
+              child: ButtonCard(
+                name: 'New group',
+                icon: Icons.group,
+              ),
+            );
+          } else if (index == 1) {
+            return ButtonCard(
+              name: 'New group',
+              icon: Icons.person_add,
+            );
+          }
+          return ContactCard(
+            contact: contacts[index - 2],
+          );
+        },
       ),
     );
   }

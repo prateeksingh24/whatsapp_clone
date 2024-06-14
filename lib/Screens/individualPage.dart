@@ -48,14 +48,14 @@ class _IndividualPageState extends State<IndividualPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+              const Icon(
                 Icons.arrow_back,
                 size: 24,
               ),
               CircleAvatar(
                 radius: 20,
                 child: SvgPicture.asset(
-                  widget.chatModel.isGroup
+                  (widget.chatModel.isGroup ?? false)
                       ? "assets/groups.svg"
                       : "assets/person.svg",
                   height: 24,
@@ -130,8 +130,6 @@ class _IndividualPageState extends State<IndividualPage> {
               setState(() {
                 show = false;
               });
-            } else {
-              Navigator.pop(context);
             }
           },
           child: Stack(
@@ -176,7 +174,6 @@ class _IndividualPageState extends State<IndividualPage> {
                                           IconButton(
                                               onPressed: () {
                                                 showModalBottomSheet(
-                                                  
                                                     backgroundColor:
                                                         Colors.transparent,
                                                     context: context,
