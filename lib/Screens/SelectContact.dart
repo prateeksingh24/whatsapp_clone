@@ -152,7 +152,7 @@ class _SelectContactState extends State<SelectContact> {
             );
           } else if (index == 1) {
             return ButtonCard(
-              name: 'New group',
+              name: 'New contact',
               icon: Icons.person_add,
             );
           }

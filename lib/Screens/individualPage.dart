@@ -130,7 +130,7 @@ class _IndividualPageState extends State<IndividualPage> {
               setState(() {
                 show = false;
               });
-            }
+            }  
           },
           child: Stack(
             children: [
