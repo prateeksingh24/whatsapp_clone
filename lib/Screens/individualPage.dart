@@ -123,14 +123,16 @@ class _IndividualPageState extends State<IndividualPage> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: PopScope(
-          canPop: false,
-          onPopInvoked: (didPop) async {
+        child: WillPopScope(
+          onWillPop: () async {
             if (show) {
               setState(() {
                 show = false;
               });
-            }  
+              return false; // Prevents popping the route
+            } else {
+              return true; // Allows popping the route
+            }
           },
           child: Stack(
             children: [
