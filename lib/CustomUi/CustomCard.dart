@@ -5,15 +5,16 @@ import 'package:whatsapp_clone/Screens/individualPage.dart';
 import '../Model/ChatModel.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key, required this.chatModel});
+  const CustomCard({super.key, required this.chatModel, required this.sourceChat});
   final ChatModel chatModel;
+   final ChatModel sourceChat;
 
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>IndividualPage(chatModel: chatModel,)));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>IndividualPage(chatModel: chatModel, sourceChat: sourceChat,)));
       },
       child: ListTile(
         leading: CircleAvatar(

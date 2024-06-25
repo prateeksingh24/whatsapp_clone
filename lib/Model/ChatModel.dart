@@ -6,6 +6,7 @@ class ChatModel {
   String currentMessage;
   String? status;
   bool select = false;
+  int? id;
 
   ChatModel({
     required this.name,
@@ -15,5 +16,6 @@ class ChatModel {
     required this.time,
     this.status,
     this.select = false,
+    this.id,
   });
 }

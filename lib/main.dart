@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/Screens/CameraScreen.dart';
+import 'package:whatsapp_clone/Screens/LoginScreen.dart';
 import 'package:whatsapp_clone/Screens/homeScreen.dart';
 
 Future<void> main() async {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "OpenSans",
         useMaterial3: false,
       ),
-      home: const HomeScreen(),
+      home: const LoginScreen(),
     );
   }
 }
