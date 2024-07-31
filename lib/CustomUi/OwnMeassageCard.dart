@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class OwnMessageCard extends StatelessWidget {
-  const OwnMessageCard({super.key});
+  const OwnMessageCard({super.key, required this.message, required this.time});
+  final String message;
+  final String time;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,8 @@ class OwnMessageCard extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                    left: 10, right: 32, top: 5, bottom: 20),
-                child: Text(
-                    "Hey jfbbf enjf e ehuefn ef f\t bskjfjwesfesnf sfnjseenjwngjesn hhh hhh hh hh hh hh h h hhh mei i am  oprateek how eha    ",
+                    left: 20, right: 32, top: 5, bottom: 20),
+                child: Text(message,
                     style: TextStyle(
                       fontSize: 16,
                     )),
@@ -32,8 +33,8 @@ class OwnMessageCard extends StatelessWidget {
                 right: 10,
                 child: Row(
                   children: [
-                    Text("20:58",
-                        style: TextStyle(fontSize: 13, color: Colors.grey)),
+                    Text(time,
+                        style: TextStyle(fontSize: 10, color: Colors.grey)),
                     SizedBox(
                       width: 5,
                     ),
